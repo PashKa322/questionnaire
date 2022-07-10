@@ -1,14 +1,18 @@
-import java.util.ArrayList;
-
+// Класс, описывающий структура вопроса
 public class Question {
+    // Текст вопроса
     private String questionText;
+
+    // Массив ответов на вопрос
     private Answer[] answers;
 
+    //Конструктор клсса
     Question(String questionText) {
         this.questionText = questionText;
         answers = new Answer[0];
     }
 
+    // Метод добавления нового ответа
     public void addAnswers(String textAnswer, boolean isCorrect) {
         Answer answer = new Answer(textAnswer, isCorrect);
 
@@ -25,6 +29,7 @@ public class Question {
         }
     }
 
+    //Метод получения количества правильных ответов на вопрос
     private int getCountCorrectAnswer(){
         int result = 0;
         for (int i = 0; i < answers.length; i++) {
@@ -35,6 +40,7 @@ public class Question {
         return result;
     }
 
+    // Метод проверки ответа
     public boolean checkAnswer(String numAnswer) {
         String[] array = (numAnswer.replaceAll("\\D+", " ").trim()).split(" ");
         int[] arrAnswers = new int[array.length];
@@ -55,6 +61,7 @@ public class Question {
         return true;
     }
 
+    // Метод превращения объекта в строку
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();

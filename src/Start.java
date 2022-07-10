@@ -1,11 +1,16 @@
 import java.util.Scanner;
 
+// Класс описывающий Анкету
 public class Start {
+    // Вопросы класса
     private Question[] questions = new Question[0];
 
+    // Метод получения всех вопросов
     private Question[] getQuestions(){
         return questions;
     }
+
+    // Метод добавления нового вопроса
     private void addQuestion(String textQuestion) {
         Question question = new Question(textQuestion);
 
@@ -22,6 +27,7 @@ public class Start {
         }
     }
 
+    // Метод создания новой анкеты
     private static void createForm(Start start) {
         System.out.println("Для прохождения теста создайте анкету");
         Scanner scanner = new Scanner(System.in);
@@ -67,6 +73,7 @@ public class Start {
         }
     }
 
+    // Метод начала прохождения анкеты
     private static int runForm(Start start) {
         Scanner scanner = new Scanner(System.in);
         int scores = 0;
@@ -89,6 +96,7 @@ public class Start {
 
 
 
+    // Метод main - запуск приложения
     public static void main(String[] args) {
         Start start = new Start();
 
